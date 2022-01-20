@@ -5,9 +5,9 @@ function Contact() {
   return (
     <div className="text-center bg-[#26282d]">
       <Image src={contactImage} alt="contact image" />
-      <h1 className="font-playfair text-3xl pt-10">Let's get in touch!</h1>
+      <h1 className="font-playfair text-3xl pt-10">Let&apos;s get in touch!</h1>
       <p className="font-futura-pt pt-5 text-lg">
-        What are you waiting for? I can't wait to start!
+        What are you waiting for? I can&apos;t wait to start!
       </p>
       <form className="bg-transparent text-xl font-futura-pt px-5">
         <div className="py-2">

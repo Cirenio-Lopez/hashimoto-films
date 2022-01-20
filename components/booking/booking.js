@@ -39,8 +39,8 @@ function Booking() {
           <div className="text-black pt-5 font-futura-pt px-6 ">
             <h2 className="text-3xl pb-3">Portraits</h2>
             <p className="text-lg pb-4 border-b border-b-black">
-              Senior, baby or adult, it doesn't matter, I'll take whatever you
-              need
+              Senior, baby or adult, it doesn&apos;t matter, I&apos;ll take
+              whatever you need
             </p>
           </div>
           <div className="text-black pt-5 font-futura-pt px-6 ">
