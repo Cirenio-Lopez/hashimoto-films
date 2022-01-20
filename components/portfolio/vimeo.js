@@ -89,7 +89,7 @@ function Vimeo() {
     },
   ];
   return (
-    <div className="pb-14">
+    <div className="pb-14 h-[60vh]">
       <Carousel>
         {videoProperties.map((videoObj) => {
           return (
@@ -97,6 +97,7 @@ function Vimeo() {
               <ReactPlayer
                 url={videoObj.url}
                 width="100%"
+                height="50vh"
                 pip={true}
                 controls={true}
                 playing={false}

@@ -236,3 +236,22 @@
 .carousel-dark .carousel-caption {
   color: #000;
 }
+/*react-gallery*/
+.image-gallery {
+  width: 75%;
+  height: auto;
+  margin: auto;
+}
+
+.image-gallery-slide img {
+  width: 100%;
+  height: auto;
+  max-height: 50vh;
+  object-fit: cover;
+  overflow: hidden;
+  object-position: center center;
+}
+
+.fullscreen .image-gallery-slide img {
+  max-height: 100vh;
+}

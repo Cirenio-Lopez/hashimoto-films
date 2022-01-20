@@ -6,11 +6,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Kailee Hashimoto</title>
-        <meta
-          name="description"
-          content="Kailee Hashimoto's personal website"
-        />
+        <title>Hashimoto Films</title>
+        <meta name="description" content="Hashimoto Films" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1"

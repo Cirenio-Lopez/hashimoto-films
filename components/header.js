@@ -9,13 +9,35 @@ function Header() {
   library.add(faInstagram);
   return (
     <>
-      <header className="flex z-30 relative overflow-hidden justify-between w-full font-playfair">
+      <header className="flex z-30 relative overflow-hidden justify-between w-full font-playfair md:pb-8">
         <div className=" pt-8 pl-8">
           <Link aria-label="Kailee Hashimoto" href="/" passHref={true}>
             <a className="h-6 sm:block text-2xl">Hashimoto Films</a>
           </Link>
         </div>
-        <div className="flex items-center z-10  pt-8 pr-8">
+        <div className="hidden md:flex pt-8 font-futura-pt text-xl pr-8">
+          <Link href="/">
+            <a className="px-6">Home</a>
+          </Link>
+          <Link href="/portfolio-film">
+            <a className="pr-6">Portfolio (Film)</a>
+          </Link>
+          <Link href="/gallery-photography">
+            <a className="pr-6">Gallery (Photography)</a>
+          </Link>
+          <Link href="/about">
+            <a className="pr-6">About</a>
+          </Link>
+          <Link href="/contact">
+            <a className="pr-6">Contact</a>
+          </Link>
+          <Link href="https://www.instagram.com/hashimoto_films/">
+            <a className="">
+              <FontAwesomeIcon icon={["fab", "instagram"]} />
+            </a>
+          </Link>
+        </div>
+        <div className="md:hidden flex items-center z-10  pt-8 pr-8">
           <div
             className={`tham tham-e-spin tham-w-8 ${show ? "tham-active" : ""}`}
             onClick={() => setShow(!show)}
