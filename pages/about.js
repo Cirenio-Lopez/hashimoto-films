@@ -1,36 +1,55 @@
 import Image from "next/image";
 import Kailee from "../img/about.jpg";
 import KaileeFull from "../img/about.webp";
-function About() {
+import { createClient } from "contentful";
+
+export async function getStaticProps() {
+  const client = createClient({
+    space: "wp8uopenh4qw",
+    accessToken: "xDgcnPxAqVj2rKf-Ei8MwBL43tThS_2XocbK_Lpslso",
+  });
+
+  const about = await client.getEntries({ content_type: "aboutPage" });
+
+  return {
+    props: {
+      about: about.items,
+    },
+  };
+}
+
+function About({ about }) {
+  console.log(about[0].fields.image.fields.file.url);
   return (
     <div className="p-8 md:flex md:flex-row-reverse md:p-32 justify-center">
       <div className="md:max-w-[500px] md:p-16 md:bg-[#26282d] md:flex md:flex-col justify-end mt-20">
         <div className="md:flex md:flex-col-reverse">
           <h2 className="font-playfair text-2xl pb-4 md:text-4xl md:leading-[1.25em]">
-            About Hashimoto Films
+            {about[0].fields.title}
           </h2>
           <h3 className="font-playfair text-xl pb-4">
-            Growing Visual Storyteller
+            {about[0].fields.subtitle}
           </h3>
         </div>
         <p className="font-futura-pt text-lg tracking-wide pb-8">
-          Hashimoto Films is run by me, Kai Hashimoto. I&apos;ve had short films
-          accepted in IMDB certified film festivals, I&apos;ve been doing
-          videography and photography for the past three years. I&apos;m
-          currently enrolled in USC&apos;s prestigious Film Production program,
-          selecting only 60 students per class. I like to spend my time outside
-          my class learning and applying my film knowledge. This involves me
-          working with local businesses, friends, and acquaintances to provide
-          whatever they need from portraits to small commercials. I do this not
-          as a way to profit, but as a way to learn my craft. And I want you to
-          be apart of that learning process.
+          {about[0].fields.description.content[0].content[0].value}
         </p>
       </div>
       <div className="md:hidden">
-        <Image src={Kailee} alt="About image of Kailee Hashimoto" />
+        <Image
+          src={"https:" + about[0].fields.image.fields.file.url}
+          alt="About image of Kailee Hashimoto"
+          width="560"
+          height="820"
+        />
       </div>
       <div className="hidden md:flex">
-        <Image src={KaileeFull} alt="About image of Kailee Hashimoto" />
+        <Image
+          src={"https:" + about[0].fields.image.fields.file.url}
+          alt="About image of Kailee Hashimoto"
+          width="560"
+          height="820"
+        />
       </div>
     </div>
   );
