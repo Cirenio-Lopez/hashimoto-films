@@ -17,9 +17,9 @@ export default function Index() {
         >
           <motion.img src={`/images/cover/image-contact.webp`} />
           <div className="text-cover">
-            <h2 className="title">Let's get in touch!</h2>
+            <h2 className="title">Let&lsquo;s get in touch!</h2>
             <p className="subtitle">
-              What are you waiting for? I can't wait to start!
+              What are you waiting for? I can&lsquo;t wait to start!
             </p>
             <p
               className="description"

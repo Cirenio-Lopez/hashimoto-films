@@ -18,17 +18,17 @@ export default function Index() {
             <p className="subtitle">Growing Visual Storyteller</p>
             <h2 className="title">About Hashimoto Films</h2>
             <p className="description">
-              Hashimoto Films is run by me, Kai Hashimoto. I've had short films
-              accepted in IMDB certified film festivals, I've been doing
-              videography and photography for the past three years. I'm
-              currently enrolled in USC's prestigious Film Production program,
-              selecting only 60 students per class. I like to spend my time
-              outside my class learning and applying my film knowledge. This
-              involves me working with local businesses, friends, and
-              acquaintances to provide whatever they need from portraits to
-              small commercials. I do this not as a way to profit, but as a way
-              to learn my craft. And I want you to be apart of that learning
-              process.
+              Hashimoto Films is run by me, Kai Hashimoto. I&lsquo;ve had short
+              films accepted in IMDB certified film festivals, I&lsquo;ve been
+              doing videography and photography for the past three years.
+              I&lsquo;m currently enrolled in USC&lsquo;s prestigious Film
+              Production program, selecting only 60 students per class. I like
+              to spend my time outside my class learning and applying my film
+              knowledge. This involves me working with local businesses,
+              friends, and acquaintances to provide whatever they need from
+              portraits to small commercials. I do this not as a way to profit,
+              but as a way to learn my craft. And I want you to be apart of that
+              learning process.
             </p>
           </div>
         </motion.div>
