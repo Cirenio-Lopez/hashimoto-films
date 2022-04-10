@@ -1,0 +1,39 @@
+footer {
+  height: 150px;
+  //   position: fixed;
+  //   bottom: 0;
+  margin-top: auto;
+  @media (max-width: $layout-breakpoint-xsmall) {
+    height: auto;
+  }
+  .phone {
+    padding: 12px 0;
+    font-size: 1.75rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    @media (max-width: $layout-breakpoint-xsmall) {
+      padding: 6px 0;
+      font-size: 1.25rem;
+    }
+  }
+  .copyright-wrapper {
+    padding: 12px 0 36px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-weight: 300;
+    @media (max-width: $layout-breakpoint-xsmall) {
+      padding: 6px 0 36px 0;
+    }
+    span {
+      font-size: 1.75rem;
+      @media (max-width: $layout-breakpoint-xsmall) {
+        font-size: 1.25rem;
+      }
+      a {
+        color: inherit;
+      }
+    }
+  }
+}

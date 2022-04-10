@@ -1,0 +1,77 @@
+body.loading {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.loader {
+  .loader-inner {
+    .transition-image {
+      position: absolute;
+      top: 10%;
+      .image-1 {
+        position: absolute;
+        transform-origin: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 500px;
+        left: 16%;
+        top: 50%;
+        @media (max-width: $layout-breakpoint-xsmall) {
+          left: 4%;
+          top: 50%;
+          width: 300px;
+          overflow: hidden;
+        }
+      }
+    }
+    .image-block {
+      position: absolute;
+      transform-origin: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &.image-2 {
+        width: 300px;
+        left: 16%;
+        bottom: 14%;
+        @media (max-width: $layout-breakpoint-xsmall) {
+          left: 4%;
+          bottom: 10%;
+        }
+      }
+      &.image-3 {
+        width: 250px;
+        right: 12%;
+        top: 8%;
+        @media (max-width: $layout-breakpoint-xsmall) {
+          top: 10%;
+          right: 4%;
+        }
+      }
+      &.image-4 {
+        max-width: 400px;
+        width: 50%;
+        right: 20%;
+        bottom: 10%;
+        @media (max-width: $layout-breakpoint-xsmall) {
+          right: 6%;
+          bottom: 15%;
+        }
+      }
+      &.image-5 {
+        width: 350px;
+        left: 40%;
+        top: 25%;
+        @media (max-width: $layout-breakpoint-xsmall) {
+          left: 6%;
+          top: 18%;
+        }
+      }
+      img {
+        width: 100%;
+        object-fit: fill;
+      }
+    }
+  }
+}
