@@ -15,7 +15,6 @@ export async function getStaticProps() {
   return {
     props: {
       portfolio: res.items,
-      fallback: false,
     },
   };
 }

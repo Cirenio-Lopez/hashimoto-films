@@ -13,7 +13,6 @@ export async function getStaticProps() {
   return {
     props: {
       loader: res.items,
-      fallback: false,
     },
   };
 }

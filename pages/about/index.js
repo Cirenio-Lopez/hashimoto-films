@@ -15,7 +15,6 @@ export async function getStaticProps() {
     props: {
       about: res.items,
     },
-    fallback: false,
   };
 }
 

@@ -15,7 +15,6 @@ export async function getStaticProps() {
   return {
     props: {
       gallery: res.items,
-      fallback: false,
     },
   };
 }
