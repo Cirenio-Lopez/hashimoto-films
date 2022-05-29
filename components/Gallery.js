@@ -1,10 +1,9 @@
 import ImageGallery from "react-image-gallery";
-import data from "./galleryData";
 
-export default function Gallery() {
+export default function Gallery(images) {
   return (
     <>
-      <ImageGallery items={data.dataInfo} />
+      <ImageGallery items={images.images} />
     </>
   );
 }

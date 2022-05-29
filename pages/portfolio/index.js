@@ -1,8 +1,35 @@
 import { motion } from "framer-motion";
 import Vimeo from "../../components/Vimeo";
+import { createClient } from "contentful";
 //Components
 
-export default function Index() {
+//Contentful
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: "AusnZD5XJqAJNKsuqVHSNCIIdrn-uIYUTEQExZbJDTM",
+  });
+
+  const res = await client.getEntries({ content_type: "portfolio" });
+
+  return {
+    props: {
+      portfolio: res.items,
+    },
+  };
+}
+
+export default function Index({ portfolio }) {
+  var VimeoData = [];
+  portfolio.forEach((item) => {
+    VimeoData.push({
+      id: item.fields.id,
+      url: item.fields.videoLink,
+      author: item.fields.author,
+      title: item.fields.title,
+      description: item.fields.description,
+    });
+  });
   return (
     <>
       <motion.div
@@ -15,7 +42,7 @@ export default function Index() {
           duration: 1.6,
         }}
       >
-        <Vimeo />
+        <Vimeo VimeoData={VimeoData} />
       </motion.div>
     </>
   );

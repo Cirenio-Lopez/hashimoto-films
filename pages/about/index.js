@@ -1,5 +1,24 @@
 import { motion } from "framer-motion";
-export default function Index() {
+import { createClient } from "contentful";
+//Components
+
+//Contentful
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: "AusnZD5XJqAJNKsuqVHSNCIIdrn-uIYUTEQExZbJDTM",
+  });
+
+  const res = await client.getEntries({ content_type: "about" });
+
+  return {
+    props: {
+      about: res.items,
+    },
+  };
+}
+
+export default function Index({ about }) {
   return (
     <>
       <div className="transition-image about-wrapper">
@@ -13,23 +32,11 @@ export default function Index() {
           exit={{ y: 800, opacity: 0 }}
           className="about"
         >
-          <motion.img src={`/images/cover/image-about.webp`} />
+          <motion.img src={`https:${about[0].fields.image.fields.file.url}`} />
           <div className="text-cover">
-            <p className="subtitle">Growing Visual Storyteller</p>
-            <h2 className="title">About Hashimoto Films</h2>
-            <p className="description">
-              Hashimoto Films is run by me, Kai Hashimoto. I&lsquo;ve had short
-              films accepted in IMDB certified film festivals, I&lsquo;ve been
-              doing videography and photography for the past three years.
-              I&lsquo;m currently enrolled in USC&lsquo;s prestigious Film
-              Production program, selecting only 60 students per class. I like
-              to spend my time outside my class learning and applying my film
-              knowledge. This involves me working with local businesses,
-              friends, and acquaintances to provide whatever they need from
-              portraits to small commercials. I do this not as a way to profit,
-              but as a way to learn my craft. And I want you to be apart of that
-              learning process.
-            </p>
+            <p className="subtitle">{about[0].fields.subtitle}</p>
+            <h2 className="title">{about[0].fields.title}</h2>
+            <p className="description">{about[0].fields.description}</p>
           </div>
         </motion.div>
       </div>

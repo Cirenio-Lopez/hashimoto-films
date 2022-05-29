@@ -10,10 +10,9 @@ import Loader from "../components/Loader";
 import Footer from "../components/Footer";
 import Banner from "../components/Banner";
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps, loader }) {
   const [loading, setLoading] = useState(true);
   const router = useRouter();
-
   useEffect(() => {
     loading
       ? document.querySelector("body").classList.add("loading")
@@ -41,18 +40,27 @@ function MyApp({ Component, pageProps }) {
         </title>
         <meta
           name="description"
-          content="Cirenio Bryan Lopez's personal website"
+          content="Hashimoto Films: Rising Photographer and Videographer"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* TWITTER CARD */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@hashimotofilms" />
+        <meta name="twitter:title" content="Hashimoto Films" />
+        <meta
+          name="twitter:description"
+          content="Rising Photographer and Videographer"
         />
         <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1"
-        ></meta>
+          name="twitter:image"
+          content="https://images.ctfassets.net/metb7zgoa00s/2ITo4ZIKGVAD70o7yT3ZCQ/6a8c6c05a7b4927201eeff0704435472/image-1.webp?h=250"
+        />
       </Head>
       <AnimateSharedLayout type="crossfade">
         <AnimatePresence>
           {loading ? (
             <motion.div key="loader">
-              <Loader setLoading={setLoading} />
+              <Loader setLoading={setLoading} images={loader} {...pageProps} />
             </motion.div>
           ) : (
             <>
@@ -78,5 +86,3 @@ function MyApp({ Component, pageProps }) {
     </>
   );
 }
-
-export default MyApp;

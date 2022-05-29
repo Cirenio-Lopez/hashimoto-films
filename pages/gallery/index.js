@@ -1,7 +1,33 @@
 import Gallery from "../../components/Gallery";
 import { motion } from "framer-motion";
+import { createClient } from "contentful";
+//Components
 
-export default function Index() {
+//Contentful
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: "AusnZD5XJqAJNKsuqVHSNCIIdrn-uIYUTEQExZbJDTM",
+  });
+
+  const res = await client.getEntries({ content_type: "gallery" });
+
+  return {
+    props: {
+      gallery: res.items,
+    },
+  };
+}
+
+export default function Index({ gallery }) {
+  var galleryData = [];
+  gallery.forEach((item) => {
+    galleryData.push({
+      id: item.fields.id,
+      original: "https:" + item.fields.photo.fields.file.url,
+      thumbnail: "https:" + item.fields.photo.fields.file.url,
+    });
+  });
   return (
     <>
       <motion.div
@@ -14,7 +40,7 @@ export default function Index() {
           duration: 1.6,
         }}
       >
-        <Gallery />
+        <Gallery images={galleryData} />
       </motion.div>
     </>
   );

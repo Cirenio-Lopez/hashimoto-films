@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Image from "./Image";
 import { motion } from "framer-motion";
 
@@ -44,7 +44,7 @@ const itemMain = {
   },
 };
 
-const Loader = ({ setLoading }) => {
+const Loader = ({ setLoading, loader }) => {
   return (
     <div className="loader">
       <motion.div
@@ -57,29 +57,42 @@ const Loader = ({ setLoading }) => {
       >
         <motion.div variants={itemMain} className="transition-image">
           <motion.img
-            src={`/images/cover/image-1.jpg`}
+            src={`/images/cover/image-1.webp`}
             alt="random alt"
             layoutId="main-image-1"
             className="image-1"
           />
         </motion.div>
-        <ImageBlock variants={item} id="image-2" />
-        <ImageBlock variants={item} id="image-3" />
-        <ImageBlock variants={item} id="image-4" />
-        <ImageBlock variants={item} id="image-5" />
+        <ImageBlock
+          variants={item}
+          id="2"
+          image={`/images/cover/image-2.webp`}
+        />
+        <ImageBlock
+          variants={item}
+          id="3"
+          image={`/images/cover/image-3.webp`}
+        />
+        <ImageBlock
+          variants={item}
+          id="4"
+          image={`/images/cover/image-4.webp`}
+        />
+        <ImageBlock
+          variants={item}
+          id="5"
+          image={`/images/cover/image-5.webp`}
+        />
       </motion.div>
     </div>
   );
 };
 
-export const ImageBlock = ({ id, variants }) => {
+export const ImageBlock = ({ id, variants, image }) => {
   return (
-    <motion.div className={`image-block ${id}`} variants={variants}>
-      <Image
-        src={`/images/cover/${id}.webp`}
-        fallback={`/images/cover/${id}.jpg`}
-        alt={id}
-      />
+    <motion.div className={`image-block image-${id}`} variants={variants}>
+      <Image src={image} alt={`image-${id}`} />
+      {/* <Image src={`https: + ${photos[i].fields.image.fields.file.url}`} alt={id} /> */}
     </motion.div>
   );
 };

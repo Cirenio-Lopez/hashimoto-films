@@ -1,18 +1,16 @@
 import ReactPlayer from "react-player/vimeo";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import data from "./vimeoData";
-import { motion } from "framer-motion";
 
 function truncate(str, n) {
   return str.length > n ? str.substr(0, n - 1) + "..." : str;
 }
 
-export default function Vimeo() {
+export default function Vimeo(vimeoData) {
   const [height, setHeight] = useState(0);
   const [totalItems, setTotalItems] = useState(5);
-  const listSize = data.dataInfo.length;
-  const slice = data.dataInfo.slice(0, totalItems);
+  const listSize = vimeoData.VimeoData.length;
+  const slice = vimeoData.VimeoData.slice(0, totalItems);
 
   function loadMore() {
     if (totalItems + 5 > listSize) {
@@ -38,6 +36,7 @@ export default function Vimeo() {
   return (
     <div className="vimeo" key="vimeo">
       {slice.map((videoObj, Index) => {
+        console.log(videoObj);
         return (
           <div className="vimeo-container" key={Index}>
             <ReactPlayer
@@ -54,7 +53,9 @@ export default function Vimeo() {
                 <span className="author">{videoObj.author}</span>
                 <span className="title">{videoObj.title}</span>
                 <span className="description">
-                  {truncate(videoObj.description, 184)}
+                  {videoObj.description != null
+                    ? truncate(videoObj.description, 184)
+                    : ""}
                 </span>
               </a>
             </Link>
