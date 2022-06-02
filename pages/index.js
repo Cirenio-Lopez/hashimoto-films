@@ -1,23 +1,7 @@
 import { motion } from "framer-motion";
-import { createClient } from "contentful";
 //Components
 
-export async function getStaticProps() {
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: "AusnZD5XJqAJNKsuqVHSNCIIdrn-uIYUTEQExZbJDTM",
-  });
-
-  const res = await client.getEntries({ content_type: "loader" });
-
-  return {
-    props: {
-      loader: res.items,
-    },
-  };
-}
-
-export default function Index({ loader }) {
+export default function Index() {
   return (
     <>
       <div className="transition-image final">

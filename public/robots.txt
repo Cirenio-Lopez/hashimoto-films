@@ -1,4 +1,7 @@
 # https://www.robotstxt.org/robotstxt.html
+Sitemap: https://hashimotofilms.com/api/posts-sitemap
+
 User-agent: *
-Allow: /
-Disallow:
+Allow: /*
+
+Disallow: /api/*
