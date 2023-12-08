@@ -6,7 +6,7 @@ export default function Index() {
     <>
       <div className="transition-image final">
         <motion.img
-          src={`/images/cover/image-1.webp`}
+          src={`/images/cover/index.jpg`}
           layoutId="main-image-1"
           initial={{ y: 800, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}

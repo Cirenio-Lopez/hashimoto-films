@@ -108,9 +108,7 @@ const BannerRowTop = ({ title }) => {
         transition={{ ease: "easeInOut", delay: 0.4 }}
         key="top-banner"
       >
-        <span className="row-message">
-          Specialized in Narrative. Adaptable to your needs.
-        </span>
+        <span className="row-message">Storytelling within Sports.</span>
       </motion.div>
     </div>
   );

@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "./Image";
 import { motion } from "framer-motion";
 
 // Variants
@@ -42,9 +41,17 @@ const itemMain = {
       duration: 1.6,
     },
   },
+  exit: {
+    opacity: 0,
+    y: -200,
+    transition: {
+      ease: "easeInOut",
+      duration: 0.8,
+    },
+  },
 };
 
-const Loader = ({ setLoading, loader }) => {
+const Loader = ({ setLoading }) => {
   return (
     <div className="loader">
       <motion.div
@@ -56,44 +63,41 @@ const Loader = ({ setLoading, loader }) => {
         onAnimationComplete={() => setLoading(false)}
       >
         <motion.div variants={itemMain} className="transition-image">
-          <motion.img
-            src={`/images/cover/image-1.webp`}
-            alt="random alt"
-            layoutId="main-image-1"
-            className="image-1"
+          <motion.video
+            src={`/videos/loading_video_1.webm`}
+            autoPlay
+            muted
+            loop
+            playsInline
+            layoutId="main-video-1"
+            className="video-1"
+            aria-label="Video that plays while webpage loads"
           />
         </motion.div>
-        <ImageBlock
-          variants={item}
-          id="2"
-          image={`/images/cover/image-2.webp`}
-        />
-        <ImageBlock
-          variants={item}
-          id="3"
-          image={`/images/cover/image-3.webp`}
-        />
-        <ImageBlock
-          variants={item}
-          id="4"
-          image={`/images/cover/image-4.webp`}
-        />
-        <ImageBlock
-          variants={item}
-          id="5"
-          image={`/images/cover/image-5.webp`}
-        />
+        <VideoBlock variants={item} id="2" />
+        <VideoBlock variants={item} id="3" />
+        <VideoBlock variants={item} id="4" />
+        <VideoBlock variants={item} id="5" />
       </motion.div>
     </div>
   );
 };
 
-export const ImageBlock = ({ id, variants, image }) => {
+export const VideoBlock = ({ id, variants }) => {
   return (
-    <motion.div className={`image-block image-${id}`} variants={variants}>
-      <Image src={image} alt={`image-${id}`} />
-      {/* <Image src={`https: + ${photos[i].fields.image.fields.file.url}`} alt={id} /> */}
+    <motion.div className={`video-block video-${id}`} variants={variants}>
+      <motion.video
+        src={`/videos/loading_video_${id}.webm`}
+        autoPlay
+        muted
+        loop
+        playsInline
+        layoutId={`main-video-${id}`}
+        className={`video-${id}`}
+        aria-label="Video that plays while webpage loads"
+      />
     </motion.div>
   );
 };
+
 export default Loader;

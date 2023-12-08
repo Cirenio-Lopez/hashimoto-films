@@ -5,16 +5,18 @@ body.loading {
 
 .loader {
   .loader-inner {
+    position: relative;
+    height: 100vh;
     .transition-image {
       position: absolute;
       top: 10%;
-      .image-1 {
+      .video-1 {
         position: absolute;
         transform-origin: center;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 500px;
+        width: 35%;
         left: 16%;
         top: 50%;
         @media (max-width: $layout-breakpoint-xsmall) {
@@ -25,50 +27,49 @@ body.loading {
         }
       }
     }
-    .image-block {
+    .video-block {
       position: absolute;
-      transform-origin: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      &.image-2 {
-        width: 300px;
-        left: 16%;
-        bottom: 14%;
+      &.video-2 {
+        width: 40%;
+        right: 10%;
+        bottom: 10%;
         @media (max-width: $layout-breakpoint-xsmall) {
           left: 4%;
           bottom: 10%;
+          width: 70%;
         }
       }
-      &.image-3 {
-        width: 250px;
+      &.video-3 {
+        width: 35%;
         right: 12%;
-        top: 8%;
+        top: 12%;
         @media (max-width: $layout-breakpoint-xsmall) {
-          top: 10%;
+          top: 20%;
           right: 4%;
+          width: 70%;
         }
       }
-      &.image-4 {
-        max-width: 400px;
-        width: 50%;
-        right: 20%;
-        bottom: 10%;
+      &.video-4 {
+        width: 45%;
+        left: 10%;
+        bottom: 5%;
         @media (max-width: $layout-breakpoint-xsmall) {
-          right: 6%;
-          bottom: 15%;
+          left: 25%;
+          bottom: 25%;
+          width: 70%;
         }
       }
-      &.image-5 {
-        width: 350px;
-        left: 40%;
+      &.video-5 {
+        left: 25%;
         top: 25%;
+        width: 45%;
         @media (max-width: $layout-breakpoint-xsmall) {
-          left: 6%;
-          top: 18%;
+          left: 5%;
+          top: 35%;
+          width: 90%;
         }
       }
-      img {
+      video {
         width: 100%;
         object-fit: fill;
       }

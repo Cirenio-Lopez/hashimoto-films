@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import Vimeo from "../../components/Vimeo";
 import { createClient } from "contentful";
 //Components
