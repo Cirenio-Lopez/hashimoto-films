@@ -32,6 +32,8 @@ export default function MyApp({ Component, pageProps, loader }) {
             ? "- Gallery"
             : router.pathname == "/about"
             ? "- About"
+            : router.pathname == "/resume"
+            ? "- Resume"
             : router.pathname == "/contact"
             ? "- Contact"
             : router.pathname == "/404"
@@ -58,7 +60,7 @@ export default function MyApp({ Component, pageProps, loader }) {
       </Head>
       <AnimateSharedLayout type="crossfade">
         <AnimatePresence>
-          {true ? (
+          {loading ? (
             <motion.div key="loader">
               <Loader setLoading={setLoading} images={loader} {...pageProps} />
             </motion.div>

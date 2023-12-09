@@ -61,6 +61,10 @@ const Banner = (props) => {
         <motion.div className="banner" variants={banner} key="banner-wrapper-1">
           <BannerRowCenter title={"Contact"} playMarquee={playMarquee} />
         </motion.div>
+      ) : props.location == "/resume" ? (
+        <motion.div className="banner" variants={banner} key="banner-wrapper-1">
+          <BannerRowCenter title={"Resume"} playMarquee={playMarquee} />
+        </motion.div>
       ) : (
         <motion.div className="banner" variants={banner} key="banner-wrapper-1">
           <BannerRowTop title={"Film"} />

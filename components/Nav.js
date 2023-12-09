@@ -42,6 +42,11 @@ export default function Nav(props) {
             </Link>
           </li>
           <li>
+            <Link href="/resume">
+              <a onClick={() => props.setShow(!props.show)}>RESUME</a>
+            </Link>
+          </li>
+          <li>
             <Link href="/contact">
               <a onClick={() => props.setShow(!props.show)}>CONTACT</a>
             </Link>

@@ -32,7 +32,9 @@ export default function Index({ about }) {
           exit={{ y: 800, opacity: 0 }}
           className="about"
         >
-          <motion.img src={`https:${about[0].fields.image.fields.file.url}`} />
+          <div className="img-container">
+            <motion.img src={`/images/about/index.jpg`} />
+          </div>
           <div className="text-cover">
             <p className="subtitle">{about[0].fields.subtitle}</p>
             <h2 className="title">{about[0].fields.title}</h2>

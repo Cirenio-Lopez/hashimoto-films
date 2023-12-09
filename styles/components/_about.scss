@@ -22,8 +22,30 @@
   @media (max-width: $layout-breakpoint-xsmall) {
     flex-direction: column;
   }
-  img {
-    position: relative;
+  .img-container {
+    height: 700px;
+    width: 600px;
+    overflow: hidden;
+    // @media (min-width: $layout-breakpoint-xsmall) {
+    //   height: 700px;
+    //   width: 100%;
+    // }
+    @media (max-width: $layout-breakpoint-xsmall) {
+      height: 600px;
+      width: 100%;
+    }
+    @media (max-width: $layout-breakpoint-xxsmall) {
+      height: 400px;
+      width: 100%;
+    }
+    img {
+      height: 100%;
+      left: -25%;
+      width: auto;
+      object-fit: cover;
+      object-position: center;
+      position: relative;
+    }
   }
   .text-cover {
     position: absolute;
@@ -42,6 +64,11 @@
       height: 100%;
     }
     @media (min-width: $layout-breakpoint-xsmall) and (max-width: $layout-breakpoint-small) {
+      width: 60%;
+      height: 85%;
+      padding: 40px;
+    }
+    @media (min-width: $layout-breakpoint-small) and (max-width: $layout-breakpoint-medium) {
       width: 60%;
       height: 85%;
       padding: 40px;
