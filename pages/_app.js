@@ -23,7 +23,7 @@ export default function MyApp({ Component, pageProps, loader }) {
     <>
       <Head>
         <title>
-          Hashimoto Films{" "}
+          Hashimoto Films
           {router.pathname == "/"
             ? ""
             : router.pathname == "/portfolio"
@@ -58,7 +58,7 @@ export default function MyApp({ Component, pageProps, loader }) {
       </Head>
       <AnimateSharedLayout type="crossfade">
         <AnimatePresence>
-          {loading ? (
+          {true ? (
             <motion.div key="loader">
               <Loader setLoading={setLoading} images={loader} {...pageProps} />
             </motion.div>

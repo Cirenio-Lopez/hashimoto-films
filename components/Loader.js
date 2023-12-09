@@ -62,22 +62,10 @@ const Loader = ({ setLoading }) => {
         exit="exit"
         onAnimationComplete={() => setLoading(false)}
       >
-        <motion.div variants={itemMain} className="transition-image">
-          <motion.video
-            src={`/videos/loading_video_1.webm`}
-            autoPlay
-            muted
-            loop
-            playsInline
-            layoutId="main-video-1"
-            className="video-1"
-            aria-label="Video that plays while webpage loads"
-          />
-        </motion.div>
-        <VideoBlock variants={item} id="2" />
-        <VideoBlock variants={item} id="3" />
-        <VideoBlock variants={item} id="4" />
-        <VideoBlock variants={item} id="5" />
+        {/* Iterate over video IDs, including 1 */}
+        {[1, 2, 3, 4, 5].map((id) => (
+          <VideoBlock key={id} id={id} variants={id === 1 ? itemMain : item} />
+        ))}
       </motion.div>
     </div>
   );
