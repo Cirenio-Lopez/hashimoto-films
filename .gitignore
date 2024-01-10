@@ -4,10 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-<<<<<<< HEAD
-=======
 .yarn/install-state.gz
->>>>>>> hashimoto-films-2024/master
 
 # testing
 /coverage
@@ -29,15 +26,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-<<<<<<< HEAD
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# vercel
-.vercel
-=======
 .env*.local
 
 # vercel
@@ -46,4 +34,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
->>>>>>> hashimoto-films-2024/master
